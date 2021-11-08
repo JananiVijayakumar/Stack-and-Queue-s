@@ -30,6 +30,20 @@ public class Queue {
             System.out.println("EnQue items : " + item);
         }
 
+        public void deque(){
+            if(front == null){
+                System.out.println("There is no items in queue");
+                System.out.println("Queue is Empty!!");
+                return;
+            }else{
+                while(front != null){
+                    Node temp = front;
+                    System.out.println("Deque items are : " + front.item);
+                    front = front.next;
+                }
+            }
+        }
+
         //to display the enque items into the queue
         public void display(){
             Node temp = new Node();
@@ -42,6 +56,8 @@ public class Queue {
             }
         }
 
+
+
         public static void main(String[] args) {
             Queue queue = new Queue();
             //Pushing the elements into stack
@@ -50,5 +66,8 @@ public class Queue {
             queue.enque(56);
             queue.display();
             System.out.println(".............................");
-        }
+            queue.deque();
+            queue.display();
+            queue.deque();
     }
+}
